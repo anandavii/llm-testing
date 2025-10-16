@@ -1,0 +1,18 @@
+description: "Hello World test for LLM prompt evaluation"
+
+prompts:
+  - "{{input}}"
+
+providers:
+  - id: openai:gpt-4.1-nano
+    label: "GPT 4.1 nano"
+
+tests:
+  - description: "Explain AI Testing in less than 200 words."
+    vars:
+      input: "Exaplin AI testing."
+    assert:
+      - type: contains-all
+        value:
+          - 'software testing'
+          - 'testing'
