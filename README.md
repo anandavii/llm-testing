@@ -17,3 +17,12 @@ This repository contains a simple "Hello World" kind of test to demonstrate LLM 
 promptfoo eval
 promptfoo view  # optional, opens local web viewer
 ```
+
+## Example Execution
+
+After running the test, we should see an output like:
+![example1](/output/ranPromptfoo.png)
+
+![exampleRun](/output/output.gif)
+
+---
