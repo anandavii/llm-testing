@@ -4,7 +4,6 @@ providers:
   - id: groq:llama-3.3-70b-versatile
     label: llama 70B
     config:
-      apiKeyEnvar: ${GROQ_API_KEY}
       temperature: 0.3
 
 defaultTest:
