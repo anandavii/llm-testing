@@ -24,7 +24,18 @@ This project contains a structured set of LLM evaluation tests designed to asses
   * `context_window_limits.txt` – long passage on space exploration with an embedded hidden instruction  
 
 ## Run the Test
+**To run a single test suite** (e.g., security):  
 `promptfoo eval -c <config-file.yaml> --no-cache`
 
-# View interactive results dashboard
+**Or to run all test suites** located in the `configs/` directory:
+`for f in configs/*.yaml; do
+  echo "Running $f"
+  promptfoo eval -c "$f" --no-cache
+done`
+
+## View interactive results dashboard
 promptfoo view
+
+# Example Execution (Demo)
+After running the test, you should see evaluation results with detailed pass/fail assertions per test.
+<p align="center"> <video src="https://github.com/user-attachments/assets/1cf51381-bd7c-4fd3-a693-fce521c31c9e" width="100%" autoplay loop muted playsinline> Sorry, your browser doesn't support embedded videos. </video> </p>
