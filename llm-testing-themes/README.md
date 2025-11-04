@@ -52,4 +52,4 @@ After running the test, you should see evaluation results with detailed pass/fai
 </p>
 
 ## Demo 2
-![demogit](/output/output.gif)
+![demogit](/llm-testing-themes/output/output.gif)
