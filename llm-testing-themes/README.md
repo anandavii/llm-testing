@@ -38,4 +38,18 @@ promptfoo view
 
 # Example Execution (Demo)
 After running the test, you should see evaluation results with detailed pass/fail assertions per test.
-<p align="center"> <video src="https://github.com/user-attachments/assets/1cf51381-bd7c-4fd3-a693-fce521c31c9e" width="100%" autoplay loop muted playsinline> Sorry, your browser doesn't support embedded videos. </video> </p>
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/325917e1-e02e-4885-b1c4-377efcc27584"
+         width="100%"
+         autoplay
+         loop
+         muted
+         playsinline
+         controls="false"
+         style="pointer-events:none;">
+    Sorry, your browser doesn't support embedded videos.
+  </video>
+</p>
+
+## Demo 2
+![demogit](/output/output.gif)
