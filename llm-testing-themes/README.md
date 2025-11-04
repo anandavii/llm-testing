@@ -50,6 +50,3 @@ After running the test, you should see evaluation results with detailed pass/fai
     Sorry, your browser doesn't support embedded videos.
   </video>
 </p>
-
-## Demo 2
-![demogit](/llm-testing-themes/output/output.gif)
