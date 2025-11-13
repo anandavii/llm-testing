@@ -1,0 +1,15 @@
+description: "Deterministic - regex match"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0 }
+
+prompts:
+  - "{{prompt_text}}"
+
+tests:
+  - description: "Check date pattern"
+    vars:
+      prompt_text: "Give today's date in YYYY-MM-DD format."
+    assert:
+      - type: regex
+        value: "\\d{4}-\\d{2}-\\d{2}"
