@@ -1,0 +1,15 @@
+description: "Deterministic - starts-with"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0 }
+
+prompts:
+  - "{{prompt_text}}"
+
+tests:
+  - description: "Greeting check"
+    vars:
+      prompt_text: "Greet politely."
+    assert:
+      - type: starts-with
+        value: "Hello"
