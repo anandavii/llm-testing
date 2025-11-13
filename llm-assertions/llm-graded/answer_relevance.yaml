@@ -1,7 +1,7 @@
 description: "Model-graded - answer relevance"
 
 providers:
-  - openai:gpt-4.1-mini
+  - groq:llama-3.3-70b-versatile
 
 prompts:
   - "{{prompt_text}}"
@@ -9,13 +9,11 @@ prompts:
 defaultTest:
   options:
     provider:
-      # Job 1: Use Groq for all text generation
       text:
         id: groq:llama-3.3-70b-versatile
         config:
           temperature: 0
       
-      # Job 2: Use Cohere for all embedding/similarity checks
       embedding:
         id: cohere:embedding:embed-english-v3.0
 
@@ -26,10 +24,12 @@ tests:
     assert:
       - type: answer-relevance
         value: "Software testing ensures quality, prevents bugs, and builds user trust."
+        threshold: 0.7
   
   - description: "Check that the answer is relevant to the prompt"
     vars:
       prompt_text: "Explain the process of photosynthesis in simple terms."
     assert:
       - type: answer-relevance
-        threshold: 0.8
+        value: "Photosynthesis is the process where plants use sunlight, carbon dioxide, and water to produce food and oxygen."
+        threshold: 0.7

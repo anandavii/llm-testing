@@ -1,0 +1,35 @@
+description: "Model-graded - factuality check"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0.3 }
+
+prompts:
+  - "{{prompt_text}}"
+
+defaultTest:
+  options:
+    provider: groq:llama-3.3-70b-versatile
+
+
+tests:
+  - description: "Factuality test"
+    vars:
+      prompt_text: "Who invented the telephone?"
+    assert:
+      - type: factuality
+        value: "Alexander Graham Bell invented the telephone."
+  
+  - description: "Correct Fact"
+    vars:
+      prompt_text: "What is the capital of Colombia?"
+    assert:
+      - type: factuality
+        value: "Bogota is the capital of Colombia"
+
+  - description: "Incorrect Fact (This test *should* fail)"
+    vars:
+      prompt_text: "What is the capital of Sydney?"
+      place: "Australia"
+    assert:
+      - type: factuality
+        value: "Sydney is the capital of Australia"
