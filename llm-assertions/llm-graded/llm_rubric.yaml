@@ -23,3 +23,19 @@ tests:
           - Clarity: concise and professional tone
           - Relevance: highlights LLM QA or testing skills
           - Tone: confident but friendly
+
+  - description: "Evaluate summary quality using rubric"
+    vars:
+      prompt_text: |
+        Summarize the following content clearly and concisely in two sentences.
+        **Do not exceed two sentences.**
+        ---
+        The city of Paris is the capital of France, known for its art, cuisine, and history.
+        Millions of tourists visit every year to see landmarks like the Eiffel Tower and Louvre.
+    assert:
+      - type: llm-rubric
+        value: |
+          The answer should:
+          - Be 1 to 2 sentences long.
+          - Include the main facts (Paris, France, tourism, culture).
+          - Stay factual and neutral (no opinions).
