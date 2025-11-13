@@ -1,0 +1,15 @@
+description: "Deterministic - contains"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0 }
+
+prompts:
+  - "{{prompt_text}}"
+
+tests:
+  - description: "Simple contains test"
+    vars:
+      prompt_text: "Translate 'Hello' to Spanish."
+    assert:
+      - type: contains
+        value: "Hola"
