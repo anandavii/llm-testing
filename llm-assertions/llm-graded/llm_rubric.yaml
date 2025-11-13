@@ -1,0 +1,25 @@
+description: "Model-graded - llm-rubric"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0.3 }
+
+prompts:
+  - "{{prompt_text}}"
+
+defaultTest:
+  options:
+    provider: groq:llama-3.3-70b-versatile
+
+
+tests:
+  - description: "Tone and clarity rubric"
+    vars:
+      prompt_text: "Write a two-sentence introduction for a LLM QA Engineer portfolio."
+    assert:
+      - type: llm-rubric
+        value: |
+          You are a writing evaluator.
+          Grade the response on:
+          - Clarity: concise and professional tone
+          - Relevance: highlights LLM QA or testing skills
+          - Tone: confident but friendly
