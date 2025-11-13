@@ -1,0 +1,35 @@
+description: "Deterministic - semantic similarity using Cohere embeddings"
+
+providers:
+  - groq:llama-3.3-70b-versatile
+
+prompts:
+  - "{{prompt_text}}"
+
+defaultTest:
+  options:
+    provider:
+      text:
+        id: groq:llama-3.3-70b-versatile
+        config:
+          temperature: 0
+
+      embedding:
+        id: cohere:embedding:embed-english-v3.0
+
+tests:
+  - description: "Semantic similarity - acronym expansion"
+    vars:
+      prompt_text: "Explain what AI stands for."
+    assert:
+      - type: similar
+        value: "Artificial Intelligence"
+        threshold: 0.5
+
+  - description: "Semantic similarity - concept match"
+    vars:
+      prompt_text: "Describe the purpose of quality assurance in software."
+    assert:
+      - type: similar
+        value: "Quality assurance ensures that software meets standards and functions as expected."
+        threshold: 0.5
