@@ -13,3 +13,10 @@ tests:
     assert:
       - type: regex
         value: "\\d{4}-\\d{2}-\\d{2}"
+
+  - description: "Check that the output is *only* a 4-digit year"
+    vars:
+      prompt_text: "Mention only the year when Bob Dylan won the Nobel Prize?"
+    assert:
+      - type: regex
+        value: "^2016$"

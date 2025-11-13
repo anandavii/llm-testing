@@ -13,3 +13,10 @@ tests:
     assert:
       - type: contains
         value: "Hola"
+    
+  - description: "Check for 'Bonjour'"
+    vars:
+      prompt_text: "Translate 'Hello' to French."
+    assert:
+      - type: contains
+        value: "Bonjour"
