@@ -1,0 +1,35 @@
+description: "Model-graded - answer relevance"
+
+providers:
+  - openai:gpt-4.1-mini
+
+prompts:
+  - "{{prompt_text}}"
+
+defaultTest:
+  options:
+    provider:
+      # Job 1: Use Groq for all text generation
+      text:
+        id: groq:llama-3.3-70b-versatile
+        config:
+          temperature: 0
+      
+      # Job 2: Use Cohere for all embedding/similarity checks
+      embedding:
+        id: cohere:embedding:embed-english-v3.0
+
+tests:
+  - description: "Relevance test"
+    vars:
+      prompt_text: "Explain the importance of software testing."
+    assert:
+      - type: answer-relevance
+        value: "Software testing ensures quality, prevents bugs, and builds user trust."
+  
+  - description: "Check that the answer is relevant to the prompt"
+    vars:
+      prompt_text: "Explain the process of photosynthesis in simple terms."
+    assert:
+      - type: answer-relevance
+        threshold: 0.8
