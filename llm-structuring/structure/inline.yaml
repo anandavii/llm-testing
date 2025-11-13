@@ -1,0 +1,20 @@
+description: "Inline tests - quick single-file validation"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0 }
+
+prompts:
+  - "Translate '{{text}}' to French."
+
+tests:
+  - description: "Hello -> Bonjour"
+    vars: { text: "Hello" }
+    assert:
+      - type: contains
+        value: "Bonjour"
+
+  - description: "Good night -> Bonne nuit"
+    vars: { text: "Good night" }
+    assert:
+      - type: contains
+        value: "Bonne nuit"
