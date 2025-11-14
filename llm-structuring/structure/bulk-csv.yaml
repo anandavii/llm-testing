@@ -13,11 +13,7 @@ defaultTest:
           temperature: 0.2
 
 prompts:
-  - |
-    You are a precise assistant. Be correct, brief, and safe.
-    {{question}}
-  - prompts:
-  - ../prompts/support_query-ext-files.txt
+  - ../prompts/support_query-bulk-csv.txt
 
 
 tests:
