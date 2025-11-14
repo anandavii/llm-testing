@@ -41,4 +41,5 @@ promptfoo eval -c structure/inline.yaml --no-cache
 promptfoo view
 
 # Example Execution (Demo)
-After running the test, you should see evaluation results with detailed pass/fail assertions per test.![exampleRun](/output/output.gif)
+After running the test, you should see evaluation results with detailed pass/fail assertions per test.   
+![exampleRun](/llm-structuring/output/output.gif)
