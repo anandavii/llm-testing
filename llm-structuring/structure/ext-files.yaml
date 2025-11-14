@@ -1,0 +1,12 @@
+description: "Externalized test suite - modular YAML import"
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0.2 }
+
+prompts:
+  - ../prompts/support_query-ext-files.txt
+
+tests:
+  - tests/test01.yaml
+  - tests/test02.yaml
+  - tests/test03.yaml

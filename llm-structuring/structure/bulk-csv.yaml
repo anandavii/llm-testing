@@ -1,0 +1,24 @@
+description: "CSV-driven, metadata-rich tests"
+
+providers:
+  - id: groq:llama-3.3-70b-versatile
+    config: { temperature: 0.2 , max_tokens: 200}
+
+defaultTest:
+  options:
+    provider:
+      text:
+        id: groq:llama-3.3-70b-versatile
+        config:
+          temperature: 0.2
+
+prompts:
+  - |
+    You are a precise assistant. Be correct, brief, and safe.
+    {{question}}
+  - prompts:
+  - ../prompts/support_query-ext-files.txt
+
+
+tests:
+  - tests/test04_bulk.csv

@@ -1,0 +1,6 @@
+- description: "Mathematical problem"
+  vars:
+    question: "What is 2 + 2?"
+  assert:
+    - type: icontains
+      value: "4"

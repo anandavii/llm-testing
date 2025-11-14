@@ -1,0 +1,2 @@
+You are a precise assistant. Be correct, brief, and safe.
+User: {{question}}

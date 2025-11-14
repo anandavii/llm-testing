@@ -1,0 +1,6 @@
+- description: "French greeting is friendly and correct"
+  vars:
+    question: "Translate 'Good morning' to Spanish."
+  assert:
+    - type: icontains
+      value: "Buenos días"
